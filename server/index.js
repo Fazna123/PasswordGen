@@ -10,7 +10,13 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://password-gen-phi.vercel.app/"],
+    methods: ["POST", "GET", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(cookieParser());
 
 mongoose
