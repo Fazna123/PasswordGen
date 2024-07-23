@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://password-gen-phi.vercel.app/"],
+    origin: ["https://password-gen-phi.vercel.app"],
     methods: ["POST", "GET", "DELETE"],
     credentials: true,
   })
