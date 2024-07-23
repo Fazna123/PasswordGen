@@ -31,7 +31,7 @@ function Header() {
         <div className='bg-teal-400 sticky top-0 z-50'>
             <div className='flex justify-between items-center mx-auto py-4 px-10'>
                 <Link to={'/'}>
-                    <h3 className='text-teal-900 p-3 rounded-lg font-bold text-xl'>Password Generator</h3>
+                    <h3 className='text-teal-900 rounded-lg font-extrabold text-3xl'>PassGen</h3>
                 </Link>
 
                 <button
@@ -43,28 +43,28 @@ function Header() {
                 </button>
                 {/* <div className={`flex ${isMenuOpen ? 'sm:flex-col lg:flex-row' : 'sm:hidden lg:flex lg:flex-row'}`}>
                     <ul className={`flex flex-col lg:flex-row gap-7 ${isMenuOpen ? 'sm:flex sm:flex-col lg:flex' : 'flex flex-row'}`}> */}
-                <div className='hidden lg:flex lg:items-center lg:space-x-7'>
+                <div className='hidden lg:flex lg:items-center lg:space-x-7 '>
                     <ul className='flex flex-row gap-7'>
                         <Link to={'/'}>
-                            <li className="text-black p-3 rounded-lg hover:text-white hover:bg-teal-700">Home</li>
+                            <li className=" text-teal-900 font-bold p-3 rounded-lg hover:text-white hover:bg-teal-700">Home</li>
                         </Link>
                         {currentUser ? (
                             <>
                                 <Link to={'/saved-passwords'}>
-                                    <li className="text-black p-3 rounded-lg hover:text-white hover:bg-teal-700">Saved Passwords</li>
+                                    <li className=" text-teal-900 font-bold p-3 rounded-lg hover:text-white hover:bg-teal-700">Saved Passwords</li>
                                 </Link>
                                 <Link to={'/create-password'}>
-                                    <li className="text-black p-3 rounded-lg hover:text-white hover:bg-teal-700">Create Password</li>
+                                    <li className=" text-teal-900 font-bold p-3 rounded-lg hover:text-white hover:bg-teal-700">Create Password</li>
                                 </Link>
-                                <button onClick={handleSignout} className="text-black p-3 rounded-lg hover:text-white hover:bg-teal-700">Logout</button>
+                                <button onClick={handleSignout} className=" text-teal-900 font-bold p-3 rounded-lg hover:text-white hover:bg-teal-700">Logout</button>
                             </>
                         ) : (
                             <>
                                 <Link to={'/sign-up'}>
-                                    <li className="text-black p-3 rounded-lg hover:text-white hover:bg-teal-700">Register</li>
+                                    <li className=" text-teal-900 font-bold p-3 rounded-lg hover:text-white hover:bg-teal-700">Register</li>
                                 </Link>
                                 <Link to={'/sign-in'}>
-                                    <li className="text-black p-3 rounded-lg hover:text-white hover:bg-teal-700">Login</li>
+                                    <li className=" text-teal-900 font-bold p-3 rounded-lg hover:text-white hover:bg-teal-700">Login</li>
                                 </Link>
                             </>
                         )}

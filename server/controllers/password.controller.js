@@ -52,7 +52,7 @@ export const generatePassword = async (req, res, next) => {
 export const savePassword = async (req, res, next) => {
   const { email, password } = req.body;
   if (!email || !password) {
-    return next(errorHandler(400, "Email and password are required"));
+    return next(errorHandler(400, "Generate the password to save"));
   }
   try {
     const newPasswordData = new Password({ email, password });
@@ -84,9 +84,7 @@ export const getPasswords = async (req, res, next) => {
 
 export const deletePassword = async (req, res, next) => {
   try {
-    console.log("delete password");
     const { passwordId } = req.params;
-    console.log("id", passwordId);
 
     const result = await Password.findByIdAndDelete(passwordId);
 
