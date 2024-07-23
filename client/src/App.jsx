@@ -1,10 +1,26 @@
-import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import SignIn from './pages/SignIn'
+import SignUp from './pages/SignUp'
+import CreatePassword from './pages/CreatePassword'
+import SavedPasswords from './pages/SavedPasswords'
+import Header from './components/Header'
+import PrivateRoute from './components/PrivateRoute'
 
 function App() {
   return (
-    <div><h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1></div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/sign-in' element={<SignIn />} />
+        <Route path='/sign-up' element={<SignUp />} />
+        <Route element={<PrivateRoute />}>
+          <Route path='/create-password' element={<CreatePassword />} />
+          <Route path='/saved-passwords' element={<SavedPasswords />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
